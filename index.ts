@@ -5,9 +5,7 @@ import "dotenv/config";
 const app = express();
 const PORT = 3000;
 
-const genAI = new GoogleGenAI({
-  apiKey: "AIzaSyA56jxfoesQscVu5HN7OTK-OOiV_QoXe2A",
-});
+const genAI = new GoogleGenAI(process.env.GEMINI_API_KEY);
 
 // Middleware to parse JSON bodies
 app.use(express.json());
